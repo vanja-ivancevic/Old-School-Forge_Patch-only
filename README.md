@@ -21,3 +21,5 @@ This patch updates various decks, enemy rewards, shop inventories, and configura
 ---
 
 *For known issues or to report new ones, please check the [GitHub Issues Page](/https://github.com/vanja-ivancevic/Old-School-Forge/issues/).*
+
+<img width="1457" alt="image" src="https://github.com/user-attachments/assets/7b7837fa-3fba-49d4-b8df-9b9d2b4c1c59" />
