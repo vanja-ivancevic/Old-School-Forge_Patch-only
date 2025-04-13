@@ -2,7 +2,9 @@
 
 This patch updates various decks, enemy rewards, shop inventories, and configuration files for the Shandalar campaign in Forge to be limited to only old-border editions up to 27. May 2003 (Scourge).
 
-All enemy decks have been modified to fit this old-school experience!
+All enemy decks have been modified to fit this old-school experience! The initial decklist were developed by a complex multi-AI-agent framework, but I'm pretty satisfied with the result and am enjoying my first "old-border only" playthrough. I make minor changes to the enemy decklists when I notice something.
+
+Boosters are available in the shops for all sets except Alpha, Beta, Unlimited and Revised. Getting power 9 is VERY difficult, as only bosses have them. Getting dual lands is less difficult, but still feels like an achievement at the moment.
 
 **Tested Version:** This patch has been tested and is intended for **forge-2.0.03**. Compatibility with other versions is not guaranteed.
 
