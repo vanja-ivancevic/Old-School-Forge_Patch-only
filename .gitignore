@@ -1,31 +1,13 @@
-# Ignore everything in the root directory by default
 *
-
-# --- Keep specific files in the root ---
 !apply_patch_mac.sh
 !apply_patch_win.bat
 !config.json
 !.gitignore
-
-# --- Keep specific files/folders in subdirectories ---
-
-# Allow the 'shops' directory itself
+!README.md
 !shops/
-# Keep the specific json file inside 'shops'
 !shops/shops.json
-
-# Allow the 'rewards' directory itself
 !rewards/
-# Keep the specific json file inside 'rewards'
 !rewards/enemies.json
-
-# Allow the 'decks' directory itself
 !decks/
-# Keep the 'updated_decks' folder
 !decks/updated_decks/
-# Keep everything inside the 'updated_decks' folder recursively
 !decks/updated_decks/**
-
-# Note: This setup explicitly ignores all other files and folders,
-# including Python scripts, other JSON files, other deck folders (like new_decks),
-# items_inprogress, etc.
