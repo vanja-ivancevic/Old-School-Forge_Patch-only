@@ -1,4 +1,4 @@
-# Old School Shandalar Forge Conversion Patch
+# Old-School Shandalar Forge Conversion Patch
 
 This patch updates various decks, enemy rewards, shop inventories, and configuration files for the Shandalar campaign in Forge to be limited to only old-border editions up to 27. May 2003 (Scourge).
 
