@@ -2,6 +2,8 @@
 
 This patch updates various decks, enemy rewards, shop inventories, and configuration files for the Shandalar campaign in Forge to be limited to only old-border editions up to 27. May 2003 (Scourge).
 
+All enemy decks have been modified to fit this old-school experience!
+
 **Tested Version:** This patch has been tested and is intended for **forge-2.0.03**. Compatibility with other versions is not guaranteed.
 
 ## How to Install
