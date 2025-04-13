@@ -10,6 +10,8 @@ Boosters are available in the shops for all sets except Alpha, Beta, Unlimited a
 
 ## How to Install
 
+!!! Applying the patch through the executables likely doesn't work properly yet. I recommend to just copy and replace the enemies.json, shops.json, config.json and all the deck folders in your respective game's /res/... folders.
+
 1.  **Download:** Download the `.zip` file attached to the latest release from the [Releases Page](https://github.com/vanja-ivancevic/Old-School-Forge/releases).
 2.  **Extract:** Extract the contents of the downloaded `.zip` file directly into your main Forge game directory. This is the directory that contains the `res` folder. After extraction, you should see `apply_patch_mac.sh`, `apply_patch_win.bat`, and a `patch_files` folder alongside your existing Forge files and folders.
 3.  **Run the Correct Script:**
