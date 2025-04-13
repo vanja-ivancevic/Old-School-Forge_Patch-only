@@ -3,11 +3,12 @@
 echo "Starting Game Patch Script (macOS/Linux)..."
 echo "---------------------------------------------"
 
-# Assume the script is run from the game's root directory.
+# Assume the script is run from *within* the extracted patch folder (e.g., Old-School-Forge-v1.1)
+# which has been copied into the game's root directory.
 # Patch files are expected in a 'patch_files' subdirectory relative to the script.
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &amp;> /dev/null &amp;&amp; pwd )"
 PATCH_DATA_ROOT="$SCRIPT_DIR/patch_files"
-GAME_ROOT="$SCRIPT_DIR" # Script should be run from the game's root
+GAME_ROOT="$( dirname "$SCRIPT_DIR" )" # Game root is the parent directory of the script's directory
 
 # --- Define Source Paths (within patch_files) ---
 SOURCE_SHOPS_FILE="$PATCH_DATA_ROOT/shops/shops.json"
@@ -24,7 +25,7 @@ DEST_DECKS_DIR="$GAME_ROOT/res/adventure/common/decks"
 # --- Check if patch_files directory exists ---
 if [ ! -d "$PATCH_DATA_ROOT" ]; then
     echo "ERROR: 'patch_files' directory not found at $PATCH_DATA_ROOT"
-    echo "Please ensure the 'patch_files' folder containing the patch data is in the same directory as this script."
+    echo "Please ensure the 'patch_files' folder containing the patch data is in the same directory as this script (inside the folder you copied from the release zip)."
     exit 1
 fi
 

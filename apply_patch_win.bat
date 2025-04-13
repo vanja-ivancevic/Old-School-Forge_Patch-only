@@ -2,11 +2,15 @@
 echo Starting Game Patch Script (Windows)...
 echo ---------------------------------------------
 
-:: Assume the script is run from the game's root directory.
+:: Assume the script is run from *within* the extracted patch folder (e.g., Old-School-Forge-vX.Y.Z)
+:: which has been copied into the game's root directory.
 :: Patch files are expected in a 'patch_files' subdirectory relative to the script.
 set SCRIPT_DIR=%~dp0
 set PATCH_DATA_ROOT=%SCRIPT_DIR%patch_files
-set GAME_ROOT=%SCRIPT_DIR%
+:: Go up one level from the script directory to find the game root
+pushd "%SCRIPT_DIR%.."
+set GAME_ROOT=%CD%
+popd
 
 :: Remove trailing backslash if present from SCRIPT_DIR for cleaner paths
 if "%GAME_ROOT:~-1%"=="\" set GAME_ROOT=%GAME_ROOT:~0,-1%
@@ -28,7 +32,7 @@ set DEST_DECKS_DIR=%GAME_ROOT%\res\adventure\common\decks
 :: --- Check if patch_files directory exists ---
 if not exist "%PATCH_DATA_ROOT%" (
     echo ERROR: 'patch_files' directory not found at %PATCH_DATA_ROOT%
-    echo Please ensure the 'patch_files' folder containing the patch data is in the same directory as this script.
+    echo Please ensure the 'patch_files' folder containing the patch data is in the same directory as this script (inside the folder you copied from the release zip).
     pause
     exit /b 1
 )
