@@ -24,6 +24,7 @@ Todo:
 - Drafts
 - Special Rewards
 - Java hardcoded scripts
+- Smith
 
 ## How to Install
 
