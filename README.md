@@ -28,8 +28,11 @@ Todo:
 !!! Applying the patch through the executables likely doesn't work properly yet. I recommend to just copy and replace the enemies.json, shops.json, config.json and all the deck folders in your respective game's /res/... folders.
 
 Config.json (set restrictions): /res/adventure/common
+
 Decks folder: /res/adventure/common
+
 Enemies.json: /res/adventure/common/world
+
 Shops.json: /res/adventure/Shandalar/world
 
 ~~1.  **Download:** Download the `.zip` file attached to the latest release from the [Releases Page](https://github.com/vanja-ivancevic/Old-School-Forge/releases).~~
