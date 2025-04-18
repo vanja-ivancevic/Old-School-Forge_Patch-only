@@ -20,7 +20,8 @@ In progress:
 
 Todo:
 - Drafts
-- 
+- Special Rewards
+- Java hardcoded scripts
 
 ## How to Install
 
