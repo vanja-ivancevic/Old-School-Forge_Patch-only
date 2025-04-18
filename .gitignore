@@ -9,5 +9,11 @@
 !rewards/
 !rewards/enemies.json
 !decks/
-!decks/updated_decks/
-!decks/updated_decks/**
+!decks/boss/
+!decks/boss/**
+!decks/miniboss/
+!decks/miniboss/**
+!decks/standard/
+!decks/standard/**
+!decks/starter/
+!decks/starter/**
