@@ -21,7 +21,7 @@ if "%PATCH_DATA_ROOT:~-1%"=="\" set PATCH_DATA_ROOT=%PATCH_DATA_ROOT:~0,-1%
 set SOURCE_SHOPS_FILE=%PATCH_DATA_ROOT%\shops\shops.json
 set SOURCE_ENEMIES_FILE=%PATCH_DATA_ROOT%\rewards\enemies.json
 set SOURCE_CONFIG_FILE=%PATCH_DATA_ROOT%\config.json
-set SOURCE_DECKS_DIR=%PATCH_DATA_ROOT%\decks\updated_decks
+set SOURCE_DECKS_DIR=%PATCH_DATA_ROOT%\decks\
 
 :: --- Define Destination Paths (within game structure) ---
 set DEST_SHOPS_DIR=%GAME_ROOT%\res\adventure\Shandalar\world

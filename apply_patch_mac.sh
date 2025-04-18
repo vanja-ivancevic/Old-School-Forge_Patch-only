@@ -14,7 +14,7 @@ GAME_ROOT="$( dirname "$SCRIPT_DIR" )" # Game root is the parent directory of th
 SOURCE_SHOPS_FILE="$PATCH_DATA_ROOT/shops/shops.json"
 SOURCE_ENEMIES_FILE="$PATCH_DATA_ROOT/rewards/enemies.json"
 SOURCE_CONFIG_FILE="$PATCH_DATA_ROOT/config.json"
-SOURCE_DECKS_DIR="$PATCH_DATA_ROOT/decks/updated_decks"
+SOURCE_DECKS_DIR="$PATCH_DATA_ROOT/decks/"
 
 # --- Define Destination Paths (within game structure) ---
 DEST_SHOPS_DIR="$GAME_ROOT/res/adventure/Shandalar/world"
