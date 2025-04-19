@@ -2,7 +2,6 @@
 Name=aether_channeler
 [Main]
 1 Forest|ODY|3
-10 Plains|ODY|3
 2 Dark Ritual|2ED|1
 2 Mountain|ODY|3
 2 Pyroclasm|7ED|1
@@ -22,4 +21,5 @@ Name=aether_channeler
 4 Reanimate|BRB|1
 4 Reya Dawnbringer|INV|1
 4 Underground River|5ED|1
-5 Swamp|ODY|3
+6 Swamp|ODY|3
+9 Plains|ODY|3
