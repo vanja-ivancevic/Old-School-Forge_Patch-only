@@ -1,11 +1,9 @@
 #!/bin/bash
 
-# update_repos.sh - Script to update both fork and patch repositories
+# update_repos.sh - Script to manage the Old School Shandalar patch repository
 
-# Configuration - Update these paths
-FORK_REPO="/Users/vanja/Creative Cloud Files Company Account a0651756@univie.ac.at 84723D5B5A2AE3390A495C11@AdobeID/Coding/decks/fresh_clone/forge-full-oldschool"
+# Configuration
 PATCH_REPO="/Users/vanja/Creative Cloud Files Company Account a0651756@univie.ac.at 84723D5B5A2AE3390A495C11@AdobeID/Coding/decks"
-UPSTREAM_URL="https://github.com/Card-Forge/forge.git"
 
 # Console colors
 BLUE='\033[0;34m'
@@ -29,147 +27,66 @@ check_success() {
     fi
 }
 
-echo -e "${BLUE}=== Updating Fork Repository ===${NC}"
-cd "$FORK_REPO"
-check_success
+# Process command line arguments
+COMMIT_MESSAGE=""
 
-# Check if upstream remote exists
-if ! git remote | grep -q "upstream"; then
-    execute git remote add upstream "$UPSTREAM_URL"
+while [[ $# -gt 0 ]]; do
+    case $1 in
+        -c|--commit)
+            COMMIT_MESSAGE="$2"
+            shift 2
+            ;;
+        -h|--help)
+            echo "Usage: $0 [options]"
+            echo ""
+            echo "Options:"
+            echo "  -c, --commit \"message\"     Commit changes with the given message"
+            echo "  -h, --help                 Show this help message"
+            exit 0
+            ;;
+        *)
+            echo "Unknown option: $1"
+            echo "Use -h or --help to see available options."
+            exit 1
+            ;;
+    esac
+done
+
+# If patch repository exists and has changes, commit them
+if [ -d "$PATCH_REPO/.git" ]; then
+    cd "$PATCH_REPO"
     check_success
-fi
-
-execute git fetch upstream
-check_success
-execute git checkout master
-check_success
-execute git merge upstream/master
-check_success
-execute git push origin master
-check_success
-
-echo -e "${BLUE}=== Applying Patch Repository Changes to Fork ===${NC}"
-cd "$PATCH_REPO"
-check_success
-execute git pull origin main
-check_success
-
-# Define Source Paths (in patch repository)
-SOURCE_SHOPS_FILE="$PATCH_REPO/shops/shops.json"
-SOURCE_ENEMIES_FILE="$PATCH_REPO/rewards/enemies.json"
-SOURCE_CONFIG_FILE="$PATCH_REPO/config.json"
-SOURCE_DECKS_DIR="$PATCH_REPO/decks"
-SOURCE_BLOCKS_FILE="$PATCH_REPO/draft/blocks.txt"
-
-# Define Destination Paths (in fork repository)
-DEST_SHOPS_DIR="$FORK_REPO/forge-gui/res/adventure/Shandalar/world"
-DEST_ENEMIES_DIR="$FORK_REPO/forge-gui/res/adventure/common/world"
-DEST_CONFIG_DIR="$FORK_REPO/forge-gui/res/adventure/common"
-DEST_DECKS_DIR="$FORK_REPO/forge-gui/res/adventure/common/decks"
-DEST_BLOCKS_DIR="$FORK_REPO/forge-gui/res/blockdata"
-
-# Ensure directories exist
-mkdir -p "$DEST_SHOPS_DIR"
-mkdir -p "$DEST_ENEMIES_DIR"
-mkdir -p "$DEST_CONFIG_DIR"
-mkdir -p "$DEST_DECKS_DIR/starter"
-mkdir -p "$DEST_DECKS_DIR/standard"
-mkdir -p "$DEST_DECKS_DIR/miniboss"
-mkdir -p "$DEST_DECKS_DIR/boss"
-mkdir -p "$DEST_BLOCKS_DIR"
-
-# Copy files to fork
-echo -e "${BLUE}[1/5] Copying decks...${NC}"
-# Copy just the .dck files and associated .json files from each deck directory
-execute cp -r "$SOURCE_DECKS_DIR/starter"/*.dck "$DEST_DECKS_DIR/starter/"
-execute cp -r "$SOURCE_DECKS_DIR/starter"/*.json "$DEST_DECKS_DIR/starter/" 2>/dev/null || true
-execute cp -r "$SOURCE_DECKS_DIR/standard"/*.dck "$DEST_DECKS_DIR/standard/"
-execute cp -r "$SOURCE_DECKS_DIR/standard"/*.json "$DEST_DECKS_DIR/standard/" 2>/dev/null || true
-execute cp -r "$SOURCE_DECKS_DIR/miniboss"/*.dck "$DEST_DECKS_DIR/miniboss/"
-execute cp -r "$SOURCE_DECKS_DIR/miniboss"/*.json "$DEST_DECKS_DIR/miniboss/" 2>/dev/null || true
-execute cp -r "$SOURCE_DECKS_DIR/boss"/*.dck "$DEST_DECKS_DIR/boss/"
-execute cp -r "$SOURCE_DECKS_DIR/boss"/*.json "$DEST_DECKS_DIR/boss/" 2>/dev/null || true
-echo -e "$CHECK_MARK Decks copied successfully"
-
-echo -e "${BLUE}[2/5] Copying config.json...${NC}"
-execute cp "$SOURCE_CONFIG_FILE" "$DEST_CONFIG_DIR/config.json"
-check_success
-echo -e "$CHECK_MARK Config copied successfully"
-
-echo -e "${BLUE}[3/5] Copying shops.json...${NC}"
-execute cp "$SOURCE_SHOPS_FILE" "$DEST_SHOPS_DIR/shops.json"
-check_success
-echo -e "$CHECK_MARK Shops data copied successfully"
-
-echo -e "${BLUE}[4/5] Copying enemies.json...${NC}"
-execute cp "$SOURCE_ENEMIES_FILE" "$DEST_ENEMIES_DIR/enemies.json"
-check_success
-echo -e "$CHECK_MARK Enemy rewards copied successfully"
-
-echo -e "${BLUE}[5/5] Copying blocks.txt...${NC}"
-execute cp "$SOURCE_BLOCKS_FILE" "$DEST_BLOCKS_DIR/blocks.txt"
-check_success
-echo -e "$CHECK_MARK Draft blocks copied successfully"
-
-# Commit changes in fork
-cd "$FORK_REPO"
-check_success
-execute git add "$DEST_DECKS_DIR/"
-execute git add "$DEST_CONFIG_DIR/config.json"
-execute git add "$DEST_SHOPS_DIR/shops.json"
-execute git add "$DEST_ENEMIES_DIR/enemies.json"
-execute git add "$DEST_BLOCKS_DIR/blocks.txt"
-execute git commit -m "Apply Old School Shandalar patch updates"
-check_success
-execute git push origin master
-check_success
-
-echo -e "${BLUE}=== Updating Patch Repository with Latest Changes ===${NC}"
-# In case any changes were made directly to the fork
-cd "$PATCH_REPO"
-check_success
-
-# Ensure directories exist in patch repo
-mkdir -p "$SOURCE_DECKS_DIR/starter"
-mkdir -p "$SOURCE_DECKS_DIR/standard"
-mkdir -p "$SOURCE_DECKS_DIR/miniboss"
-mkdir -p "$SOURCE_DECKS_DIR/boss"
-mkdir -p "$(dirname "$SOURCE_CONFIG_FILE")"
-mkdir -p "$(dirname "$SOURCE_SHOPS_FILE")"
-mkdir -p "$(dirname "$SOURCE_ENEMIES_FILE")"
-mkdir -p "$(dirname "$SOURCE_BLOCKS_FILE")"
-
-# Copy files from fork back to patch repo to ensure sync
-execute cp -r "$DEST_DECKS_DIR/starter"/*.dck "$SOURCE_DECKS_DIR/starter/"
-execute cp -r "$DEST_DECKS_DIR/starter"/*.json "$SOURCE_DECKS_DIR/starter/" 2>/dev/null || true
-execute cp -r "$DEST_DECKS_DIR/standard"/*.dck "$SOURCE_DECKS_DIR/standard/"
-execute cp -r "$DEST_DECKS_DIR/standard"/*.json "$SOURCE_DECKS_DIR/standard/" 2>/dev/null || true
-execute cp -r "$DEST_DECKS_DIR/miniboss"/*.dck "$SOURCE_DECKS_DIR/miniboss/"
-execute cp -r "$DEST_DECKS_DIR/miniboss"/*.json "$SOURCE_DECKS_DIR/miniboss/" 2>/dev/null || true
-execute cp -r "$DEST_DECKS_DIR/boss"/*.dck "$SOURCE_DECKS_DIR/boss/"
-execute cp -r "$DEST_DECKS_DIR/boss"/*.json "$SOURCE_DECKS_DIR/boss/" 2>/dev/null || true
-execute cp "$DEST_CONFIG_DIR/config.json" "$SOURCE_CONFIG_FILE"
-execute cp "$DEST_SHOPS_DIR/shops.json" "$SOURCE_SHOPS_FILE"
-execute cp "$DEST_ENEMIES_DIR/enemies.json" "$SOURCE_ENEMIES_FILE"
-execute cp "$DEST_BLOCKS_DIR/blocks.txt" "$SOURCE_BLOCKS_FILE"
-
-# Check if there are changes to commit
-if [[ $(git status --porcelain) ]]; then
-    execute git add "$SOURCE_DECKS_DIR/starter"
-    execute git add "$SOURCE_DECKS_DIR/standard"
-    execute git add "$SOURCE_DECKS_DIR/miniboss"
-    execute git add "$SOURCE_DECKS_DIR/boss"
-    execute git add "$SOURCE_CONFIG_FILE"
-    execute git add "$SOURCE_SHOPS_FILE"
-    execute git add "$SOURCE_ENEMIES_FILE"
-    execute git add "$SOURCE_BLOCKS_FILE"
-    execute git commit -m "Sync changes from fork repository"
-    check_success
-    execute git push origin main
-    check_success
-    echo -e "$CHECK_MARK Patch repository updated with latest changes."
+    
+    # Pull latest changes
+    echo -e "${BLUE}=== Updating patch repository from remote ===${NC}"
+    execute git pull origin main
+    
+    # If commit message provided, commit changes
+    if [ ! -z "$COMMIT_MESSAGE" ]; then
+        echo -e "${BLUE}=== Committing changes to patch repository ===${NC}"
+        
+        # Check if there are changes to commit
+        if [[ ! $(git status --porcelain) ]]; then
+            echo -e "${YELLOW}No changes detected in the repository.${NC}"
+        else
+            # Add all changes
+            execute git add .
+            check_success
+            
+            # Commit changes
+            execute git commit -m "$COMMIT_MESSAGE"
+            check_success
+            
+            # Push changes
+            execute git push origin main
+            check_success
+            
+            echo -e "$CHECK_MARK Changes committed and pushed to the repository."
+        fi
+    fi
 else
-    echo -e "$CHECK_MARK No changes to commit in patch repository."
+    echo -e "${RED}Error: The patch repository at $PATCH_REPO does not appear to be a git repository.${NC}"
+    exit 1
 fi
 
-echo -e "${GREEN}✅ Repositories have been successfully updated!${NC}" 
+echo -e "${GREEN}✅ Repository has been successfully updated!${NC}" 
