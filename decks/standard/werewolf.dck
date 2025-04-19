@@ -1,8 +1,7 @@
 [metadata]
 Name=werewolf
 [Main]
-11 Forest|ODY|3
-12 Mountain|ODY|3
+10 Mountain|ODY|1
 2 Frenzied Tilling|INV|1
 2 Shivan Dragon|LEB|1
 4 Beast Attack|ODY|1
@@ -14,3 +13,4 @@ Name=werewolf
 4 Thunderscape Battlemage|PLS|1
 4 Werebear|ODY|1
 4 Wild Mongrel|ODY|1
+9 Forest|ODY|1
