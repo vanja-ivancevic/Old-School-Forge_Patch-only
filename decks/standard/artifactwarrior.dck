@@ -1,12 +1,12 @@
 [metadata]
 Name=artifactwarrior
 [Main]
-1 Island|USG|3
-2 Forest|USG|3
+1 Plains|USG|2
+2 Forest|USG|2
+2 Island|USG|2
 2 Karn, Silver Golem|USG|1
-2 Mountain|USG|3
-2 Plains|USG|3
-2 Swamp|USG|3
+2 Mountain|USG|2
+2 Swamp|USG|2
 4 Metalworker|UDS|1
 4 Mox Diamond|STH|1
 4 Phyrexian Colossus|USG|1

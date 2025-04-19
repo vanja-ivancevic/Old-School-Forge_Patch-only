@@ -1,14 +1,20 @@
 [metadata]
 Name=counter
 [Main]
-25 Island|5ED|1
-4 Brainstorm|BTD|1
-4 Counterspell|5ED|1
-4 Dissipate|MIR|1
-4 Feedback|3ED|1
-4 Hydroblast|5ED|1
-4 Intuition|G03|1
-4 Mana Leak|BRB|1
-4 Merfolk Looter|EXO|1
-4 Serrated Arrows|HML|1
-4 Syncopate|ODY|1
+1 Mountain|7ED|3
+1 Seismic Assault|7ED|1
+16 Island|7ED|3
+2 Concentrate|ODY|1
+2 Cunning Wish|JUD|1
+2 Impulse|BTD|1
+2 Intuition|G03|1
+4 Accumulated Knowledge|NEM|1
+4 Ancient Tomb|TMP|1
+4 City of Traitors|EXO|1
+4 Dream Halls|STH|1
+4 Meditate|TMP|1
+4 Opportunity|7ED|1
+4 Rush of Knowledge|SCG|1
+4 Show and Tell|USG|1
+4 Sleight of Hand|7ED|1
+4 Volcanic Island|LEA|1
