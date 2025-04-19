@@ -4,6 +4,8 @@
 !config.json
 !.gitignore
 !README.md
+!draft/
+!draft/blocks.txt
 !shops/
 !shops/shops.json
 !rewards/

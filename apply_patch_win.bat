@@ -64,12 +64,14 @@ mkdir "%BACKUP_DIR%" 2>nul
 set SOURCE_SHOPS_FILE=%PATCH_DATA_ROOT%\shops\shops.json
 set SOURCE_ENEMIES_FILE=%PATCH_DATA_ROOT%\rewards\enemies.json
 set SOURCE_CONFIG_FILE=%PATCH_DATA_ROOT%\config.json
+set SOURCE_BLOCKS_FILE=%PATCH_DATA_ROOT%\draft\blocks.txt
 set SOURCE_DECKS_DIR=%PATCH_DATA_ROOT%\decks\
 
 :: --- Define Destination Paths (within game structure) ---
 set DEST_SHOPS_DIR=%GAME_ROOT%\res\adventure\Shandalar\world
 set DEST_ENEMIES_DIR=%GAME_ROOT%\res\adventure\common\world
 set DEST_CONFIG_DIR=%GAME_ROOT%\res\adventure\common
+set DEST_BLOCKS_DIR=%GAME_ROOT%\res\blockdata
 set DEST_DECKS_DIR=%GAME_ROOT%\res\adventure\common\decks
 
 :: Initialize counters
@@ -100,10 +102,11 @@ set ERRORS_FOUND=0
 
 :: Backup important files
 echo.
-echo [1/5] Creating backups of original files...
+echo [1/6] Creating backups of original files...
 call :backup_file "%DEST_SHOPS_DIR%\shops.json" "Shandalar\world"
 call :backup_file "%DEST_ENEMIES_DIR%\enemies.json" "common\world"
 call :backup_file "%DEST_CONFIG_DIR%\config.json" "common"
+call :backup_file "%DEST_BLOCKS_DIR%\blocks.txt" "blockdata"
 
 :: Backup decks directory (only backing up .dck files to save space)
 echo     Backing up original deck files...
@@ -200,19 +203,23 @@ echo     [✓] %BACKUP_FILES% files backed up to %BACKUP_DIR%
 
 :: --- Perform Patching ---
 echo.
-echo [2/5] Patching shops.json...
+echo [2/6] Patching shops.json...
 call :copy_file "%SOURCE_SHOPS_FILE%" "%DEST_SHOPS_DIR%"
 
 echo.
-echo [3/5] Patching enemies.json...
+echo [3/6] Patching enemies.json...
 call :copy_file "%SOURCE_ENEMIES_FILE%" "%DEST_ENEMIES_DIR%"
 
 echo.
-echo [4/5] Patching config.json...
+echo [4/6] Patching config.json...
 call :copy_file "%SOURCE_CONFIG_FILE%" "%DEST_CONFIG_DIR%"
 
 echo.
-echo [5/5] Patching decks...
+echo [5/6] Patching blocks.txt...
+call :copy_file "%SOURCE_BLOCKS_FILE%" "%DEST_BLOCKS_DIR%"
+
+echo.
+echo [6/6] Patching decks...
 call :copy_decks "%SOURCE_DECKS_DIR%" "%DEST_DECKS_DIR%"
 
 :: --- Calculate total files copied ---

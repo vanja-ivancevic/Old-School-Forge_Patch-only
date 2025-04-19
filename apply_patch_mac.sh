@@ -62,12 +62,14 @@ mkdir -p "$BACKUP_DIR"
 SOURCE_SHOPS_FILE="$PATCH_DATA_ROOT/shops/shops.json"
 SOURCE_ENEMIES_FILE="$PATCH_DATA_ROOT/rewards/enemies.json"
 SOURCE_CONFIG_FILE="$PATCH_DATA_ROOT/config.json"
+SOURCE_BLOCKS_FILE="$PATCH_DATA_ROOT/draft/blocks.txt"
 SOURCE_DECKS_DIR="$PATCH_DATA_ROOT/decks/"
 
 # --- Define Destination Paths (within game structure) ---
 DEST_SHOPS_DIR="$GAME_ROOT/res/adventure/Shandalar/world"
 DEST_ENEMIES_DIR="$GAME_ROOT/res/adventure/common/world"
 DEST_CONFIG_DIR="$GAME_ROOT/res/adventure/common"
+DEST_BLOCKS_DIR="$GAME_ROOT/res/blockdata"
 DEST_DECKS_DIR="$GAME_ROOT/res/adventure/common/decks"
 
 # Initialize counters
@@ -174,10 +176,11 @@ copy_decks() {
 
 # --- Perform Backups ---
 echo
-echo -e "${BLUE}[1/5] Creating backups of original files...${NC}"
+echo -e "${BLUE}[1/6] Creating backups of original files...${NC}"
 backup_file "$DEST_SHOPS_DIR/shops.json" "Shandalar/world"
 backup_file "$DEST_ENEMIES_DIR/enemies.json" "common/world"
 backup_file "$DEST_CONFIG_DIR/config.json" "common"
+backup_file "$DEST_BLOCKS_DIR/blocks.txt" "blockdata"
 
 # Backup deck files
 echo "    Backing up original deck files..."
@@ -193,19 +196,23 @@ echo -e "    $CHECK_MARK $backup_files files backed up to $BACKUP_DIR"
 check_permissions
 
 echo
-echo -e "${BLUE}[2/5] Patching shops.json...${NC}"
+echo -e "${BLUE}[2/6] Patching shops.json...${NC}"
 copy_file "$SOURCE_SHOPS_FILE" "$DEST_SHOPS_DIR" || errors_found=1
 
 echo
-echo -e "${BLUE}[3/5] Patching enemies.json...${NC}"
+echo -e "${BLUE}[3/6] Patching enemies.json...${NC}"
 copy_file "$SOURCE_ENEMIES_FILE" "$DEST_ENEMIES_DIR" || errors_found=1
 
 echo
-echo -e "${BLUE}[4/5] Patching config.json...${NC}"
+echo -e "${BLUE}[4/6] Patching config.json...${NC}"
 copy_file "$SOURCE_CONFIG_FILE" "$DEST_CONFIG_DIR" || errors_found=1
 
 echo
-echo -e "${BLUE}[5/5] Patching decks...${NC}"
+echo -e "${BLUE}[5/6] Patching blocks.txt...${NC}"
+copy_file "$SOURCE_BLOCKS_FILE" "$DEST_BLOCKS_DIR" || errors_found=1
+
+echo
+echo -e "${BLUE}[6/6] Patching decks...${NC}"
 copy_decks "$SOURCE_DECKS_DIR" "$DEST_DECKS_DIR" || errors_found=1
 
 # --- Calculate total files copied ---
