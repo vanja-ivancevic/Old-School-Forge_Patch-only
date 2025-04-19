@@ -6,7 +6,10 @@ This patch updates Forge's Shandalar campaign to only use old-border cards (from
 - Shop inventories 
 - Rewards and configurations
 
-**Note:** This is a patch for the main Forge Shandalar adventure game, which can be found here: [https://github.com/Card-Forge/forge](https://github.com/Card-Forge/forge)
+## Important Links
+
+- **[Standalone Fork Repository](https://github.com/vanja-ivancevic/Forge-Old-School-Shandalar)**: For a complete, ready-to-play version of the Old-School Shandalar experience
+- **[Original Forge Repository](https://github.com/Card-Forge/forge)**: The main Forge project this patch is based on
 
 All enemy decks have been reimagined for this old-school experience! The initial decklists were developed by a complex multi-AI-agent framework, and continue to be refined through playtesting. At least 30-40 decks have been manually reviewed and improved - including all the boss decks.
 
@@ -19,7 +22,13 @@ All enemy decks have been reimagined for this old-school experience! The initial
 - Dual lands are challenging but satisfying to acquire
 - Authentic old-school Magic feeling with only pre-modern frame cards
 
-## How to Install
+## Quick Start
+
+For the fastest way to start playing, download the complete standalone version from the [Standalone Fork Repository](https://github.com/vanja-ivancevic/Forge-Old-School-Shandalar).
+
+## How to Install (Patch Only)
+
+If you prefer to apply this patch to an existing Forge installation:
 
 ### Option 1: Using Installation Scripts (Recommended)
 
@@ -76,6 +85,16 @@ If you prefer to install manually or encounter any issues with the scripts, foll
 🔄 In Progress: 
 - Special rewards
 - Balance adjustments based on player feedback
+
+## Repository Maintenance
+
+This repository contains the patch files, while the standalone version is maintained in a separate fork. To manage both repositories, use the included `update_repos.sh` script which will:
+
+1. Update the fork with upstream changes
+2. Apply patch changes to the fork
+3. Keep both repositories in sync
+
+Run the script with `./update_repos.sh` from this directory.
 
 ## Feedback and Issues
 
