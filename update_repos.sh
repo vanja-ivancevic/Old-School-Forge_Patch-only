@@ -58,7 +58,7 @@ check_success
 SOURCE_SHOPS_FILE="$PATCH_REPO/shops/shops.json"
 SOURCE_ENEMIES_FILE="$PATCH_REPO/rewards/enemies.json"
 SOURCE_CONFIG_FILE="$PATCH_REPO/config.json"
-SOURCE_DECKS_DIR="$PATCH_REPO/decks/"
+SOURCE_DECKS_DIR="$PATCH_REPO/decks"
 SOURCE_BLOCKS_FILE="$PATCH_REPO/draft/blocks.txt"
 
 # Define Destination Paths (in fork repository)
@@ -72,13 +72,23 @@ DEST_BLOCKS_DIR="$FORK_REPO/forge-gui/res/blockdata"
 mkdir -p "$DEST_SHOPS_DIR"
 mkdir -p "$DEST_ENEMIES_DIR"
 mkdir -p "$DEST_CONFIG_DIR"
-mkdir -p "$DEST_DECKS_DIR"
+mkdir -p "$DEST_DECKS_DIR/starter"
+mkdir -p "$DEST_DECKS_DIR/standard"
+mkdir -p "$DEST_DECKS_DIR/miniboss"
+mkdir -p "$DEST_DECKS_DIR/boss"
 mkdir -p "$DEST_BLOCKS_DIR"
 
 # Copy files to fork
 echo -e "${BLUE}[1/5] Copying decks...${NC}"
-execute cp -r "$SOURCE_DECKS_DIR"/* "$DEST_DECKS_DIR/"
-check_success
+# Copy just the .dck files and associated .json files from each deck directory
+execute cp -r "$SOURCE_DECKS_DIR/starter"/*.dck "$DEST_DECKS_DIR/starter/"
+execute cp -r "$SOURCE_DECKS_DIR/starter"/*.json "$DEST_DECKS_DIR/starter/" 2>/dev/null || true
+execute cp -r "$SOURCE_DECKS_DIR/standard"/*.dck "$DEST_DECKS_DIR/standard/"
+execute cp -r "$SOURCE_DECKS_DIR/standard"/*.json "$DEST_DECKS_DIR/standard/" 2>/dev/null || true
+execute cp -r "$SOURCE_DECKS_DIR/miniboss"/*.dck "$DEST_DECKS_DIR/miniboss/"
+execute cp -r "$SOURCE_DECKS_DIR/miniboss"/*.json "$DEST_DECKS_DIR/miniboss/" 2>/dev/null || true
+execute cp -r "$SOURCE_DECKS_DIR/boss"/*.dck "$DEST_DECKS_DIR/boss/"
+execute cp -r "$SOURCE_DECKS_DIR/boss"/*.json "$DEST_DECKS_DIR/boss/" 2>/dev/null || true
 echo -e "$CHECK_MARK Decks copied successfully"
 
 echo -e "${BLUE}[2/5] Copying config.json...${NC}"
@@ -120,14 +130,24 @@ cd "$PATCH_REPO"
 check_success
 
 # Ensure directories exist in patch repo
-mkdir -p "$SOURCE_DECKS_DIR"
+mkdir -p "$SOURCE_DECKS_DIR/starter"
+mkdir -p "$SOURCE_DECKS_DIR/standard"
+mkdir -p "$SOURCE_DECKS_DIR/miniboss"
+mkdir -p "$SOURCE_DECKS_DIR/boss"
 mkdir -p "$(dirname "$SOURCE_CONFIG_FILE")"
 mkdir -p "$(dirname "$SOURCE_SHOPS_FILE")"
 mkdir -p "$(dirname "$SOURCE_ENEMIES_FILE")"
 mkdir -p "$(dirname "$SOURCE_BLOCKS_FILE")"
 
 # Copy files from fork back to patch repo to ensure sync
-execute cp -r "$DEST_DECKS_DIR/"* "$SOURCE_DECKS_DIR/"
+execute cp -r "$DEST_DECKS_DIR/starter"/*.dck "$SOURCE_DECKS_DIR/starter/"
+execute cp -r "$DEST_DECKS_DIR/starter"/*.json "$SOURCE_DECKS_DIR/starter/" 2>/dev/null || true
+execute cp -r "$DEST_DECKS_DIR/standard"/*.dck "$SOURCE_DECKS_DIR/standard/"
+execute cp -r "$DEST_DECKS_DIR/standard"/*.json "$SOURCE_DECKS_DIR/standard/" 2>/dev/null || true
+execute cp -r "$DEST_DECKS_DIR/miniboss"/*.dck "$SOURCE_DECKS_DIR/miniboss/"
+execute cp -r "$DEST_DECKS_DIR/miniboss"/*.json "$SOURCE_DECKS_DIR/miniboss/" 2>/dev/null || true
+execute cp -r "$DEST_DECKS_DIR/boss"/*.dck "$SOURCE_DECKS_DIR/boss/"
+execute cp -r "$DEST_DECKS_DIR/boss"/*.json "$SOURCE_DECKS_DIR/boss/" 2>/dev/null || true
 execute cp "$DEST_CONFIG_DIR/config.json" "$SOURCE_CONFIG_FILE"
 execute cp "$DEST_SHOPS_DIR/shops.json" "$SOURCE_SHOPS_FILE"
 execute cp "$DEST_ENEMIES_DIR/enemies.json" "$SOURCE_ENEMIES_FILE"
@@ -135,7 +155,10 @@ execute cp "$DEST_BLOCKS_DIR/blocks.txt" "$SOURCE_BLOCKS_FILE"
 
 # Check if there are changes to commit
 if [[ $(git status --porcelain) ]]; then
-    execute git add "$SOURCE_DECKS_DIR/"
+    execute git add "$SOURCE_DECKS_DIR/starter"
+    execute git add "$SOURCE_DECKS_DIR/standard"
+    execute git add "$SOURCE_DECKS_DIR/miniboss"
+    execute git add "$SOURCE_DECKS_DIR/boss"
     execute git add "$SOURCE_CONFIG_FILE"
     execute git add "$SOURCE_SHOPS_FILE"
     execute git add "$SOURCE_ENEMIES_FILE"
