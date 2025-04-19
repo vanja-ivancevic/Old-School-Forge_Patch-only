@@ -59,39 +59,47 @@ SOURCE_SHOPS_FILE="$PATCH_REPO/shops/shops.json"
 SOURCE_ENEMIES_FILE="$PATCH_REPO/rewards/enemies.json"
 SOURCE_CONFIG_FILE="$PATCH_REPO/config.json"
 SOURCE_DECKS_DIR="$PATCH_REPO/decks/"
+SOURCE_BLOCKS_FILE="$PATCH_REPO/draft/blocks.txt"
 
 # Define Destination Paths (in fork repository)
 DEST_SHOPS_DIR="$FORK_REPO/forge-gui/res/adventure/Shandalar/world"
 DEST_ENEMIES_DIR="$FORK_REPO/forge-gui/res/adventure/common/world"
 DEST_CONFIG_DIR="$FORK_REPO/forge-gui/res/adventure/common"
 DEST_DECKS_DIR="$FORK_REPO/forge-gui/res/adventure/common/decks"
+DEST_BLOCKS_DIR="$FORK_REPO/forge-gui/res/blockdata"
 
 # Ensure directories exist
 mkdir -p "$DEST_SHOPS_DIR"
 mkdir -p "$DEST_ENEMIES_DIR"
 mkdir -p "$DEST_CONFIG_DIR"
 mkdir -p "$DEST_DECKS_DIR"
+mkdir -p "$DEST_BLOCKS_DIR"
 
 # Copy files to fork
-echo -e "${BLUE}[1/4] Copying decks...${NC}"
+echo -e "${BLUE}[1/5] Copying decks...${NC}"
 execute cp -r "$SOURCE_DECKS_DIR"/* "$DEST_DECKS_DIR/"
 check_success
 echo -e "$CHECK_MARK Decks copied successfully"
 
-echo -e "${BLUE}[2/4] Copying config.json...${NC}"
+echo -e "${BLUE}[2/5] Copying config.json...${NC}"
 execute cp "$SOURCE_CONFIG_FILE" "$DEST_CONFIG_DIR/config.json"
 check_success
 echo -e "$CHECK_MARK Config copied successfully"
 
-echo -e "${BLUE}[3/4] Copying shops.json...${NC}"
+echo -e "${BLUE}[3/5] Copying shops.json...${NC}"
 execute cp "$SOURCE_SHOPS_FILE" "$DEST_SHOPS_DIR/shops.json"
 check_success
 echo -e "$CHECK_MARK Shops data copied successfully"
 
-echo -e "${BLUE}[4/4] Copying enemies.json...${NC}"
+echo -e "${BLUE}[4/5] Copying enemies.json...${NC}"
 execute cp "$SOURCE_ENEMIES_FILE" "$DEST_ENEMIES_DIR/enemies.json"
 check_success
 echo -e "$CHECK_MARK Enemy rewards copied successfully"
+
+echo -e "${BLUE}[5/5] Copying blocks.txt...${NC}"
+execute cp "$SOURCE_BLOCKS_FILE" "$DEST_BLOCKS_DIR/blocks.txt"
+check_success
+echo -e "$CHECK_MARK Draft blocks copied successfully"
 
 # Commit changes in fork
 cd "$FORK_REPO"
@@ -100,6 +108,7 @@ execute git add "$DEST_DECKS_DIR/"
 execute git add "$DEST_CONFIG_DIR/config.json"
 execute git add "$DEST_SHOPS_DIR/shops.json"
 execute git add "$DEST_ENEMIES_DIR/enemies.json"
+execute git add "$DEST_BLOCKS_DIR/blocks.txt"
 execute git commit -m "Apply Old School Shandalar patch updates"
 check_success
 execute git push origin master
@@ -115,12 +124,14 @@ mkdir -p "$SOURCE_DECKS_DIR"
 mkdir -p "$(dirname "$SOURCE_CONFIG_FILE")"
 mkdir -p "$(dirname "$SOURCE_SHOPS_FILE")"
 mkdir -p "$(dirname "$SOURCE_ENEMIES_FILE")"
+mkdir -p "$(dirname "$SOURCE_BLOCKS_FILE")"
 
 # Copy files from fork back to patch repo to ensure sync
 execute cp -r "$DEST_DECKS_DIR/"* "$SOURCE_DECKS_DIR/"
 execute cp "$DEST_CONFIG_DIR/config.json" "$SOURCE_CONFIG_FILE"
 execute cp "$DEST_SHOPS_DIR/shops.json" "$SOURCE_SHOPS_FILE"
 execute cp "$DEST_ENEMIES_DIR/enemies.json" "$SOURCE_ENEMIES_FILE"
+execute cp "$DEST_BLOCKS_DIR/blocks.txt" "$SOURCE_BLOCKS_FILE"
 
 # Check if there are changes to commit
 if [[ $(git status --porcelain) ]]; then
@@ -128,6 +139,7 @@ if [[ $(git status --porcelain) ]]; then
     execute git add "$SOURCE_CONFIG_FILE"
     execute git add "$SOURCE_SHOPS_FILE"
     execute git add "$SOURCE_ENEMIES_FILE"
+    execute git add "$SOURCE_BLOCKS_FILE"
     execute git commit -m "Sync changes from fork repository"
     check_success
     execute git push origin main

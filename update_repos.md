@@ -53,6 +53,9 @@ cp shops/shops.json /path/to/forge-fork/forge-gui/res/adventure/Shandalar/world/
 # Enemy rewards
 cp rewards/enemies.json /path/to/forge-fork/forge-gui/res/adventure/common/world/enemies.json
 
+# Draft blocks
+cp draft/blocks.txt /path/to/forge-fork/forge-gui/res/blockdata/blocks.txt
+
 # Navigate back to your fork
 cd /path/to/forge-fork
 
@@ -61,6 +64,7 @@ git add forge-gui/res/adventure/common/decks/
 git add forge-gui/res/adventure/common/config.json
 git add forge-gui/res/adventure/Shandalar/world/shops.json
 git add forge-gui/res/adventure/common/world/enemies.json
+git add forge-gui/res/blockdata/blocks.txt
 git commit -m "Apply Old School Shandalar patch updates"
 
 # Push changes to your fork
@@ -80,12 +84,14 @@ cp -r /path/to/forge-fork/forge-gui/res/adventure/common/decks/* decks/
 cp /path/to/forge-fork/forge-gui/res/adventure/common/config.json config.json
 cp /path/to/forge-fork/forge-gui/res/adventure/Shandalar/world/shops.json shops/shops.json
 cp /path/to/forge-fork/forge-gui/res/adventure/common/world/enemies.json rewards/enemies.json
+cp /path/to/forge-fork/forge-gui/res/blockdata/blocks.txt draft/blocks.txt
 
 # Add and commit changes
 git add decks/
 git add config.json
 git add shops/shops.json
 git add rewards/enemies.json
+git add draft/blocks.txt
 git commit -m "Sync changes from fork repository"
 
 # Push changes to your patch repository
@@ -151,17 +157,20 @@ SOURCE_SHOPS_FILE="$PATCH_REPO/shops/shops.json"
 SOURCE_ENEMIES_FILE="$PATCH_REPO/rewards/enemies.json"
 SOURCE_CONFIG_FILE="$PATCH_REPO/config.json"
 SOURCE_DECKS_DIR="$PATCH_REPO/decks/"
+SOURCE_BLOCKS_FILE="$PATCH_REPO/draft/blocks.txt"
 
 DEST_SHOPS_DIR="$FORK_REPO/forge-gui/res/adventure/Shandalar/world"
 DEST_ENEMIES_DIR="$FORK_REPO/forge-gui/res/adventure/common/world"
 DEST_CONFIG_DIR="$FORK_REPO/forge-gui/res/adventure/common"
 DEST_DECKS_DIR="$FORK_REPO/forge-gui/res/adventure/common/decks"
+DEST_BLOCKS_DIR="$FORK_REPO/forge-gui/res/blockdata"
 
 # Ensure directories exist
 mkdir -p "$DEST_SHOPS_DIR"
 mkdir -p "$DEST_ENEMIES_DIR"
 mkdir -p "$DEST_CONFIG_DIR"
 mkdir -p "$DEST_DECKS_DIR"
+mkdir -p "$DEST_BLOCKS_DIR"
 
 # Copy files to fork
 execute cp -r "$SOURCE_DECKS_DIR"/* "$DEST_DECKS_DIR/"
@@ -172,6 +181,8 @@ execute cp "$SOURCE_SHOPS_FILE" "$DEST_SHOPS_DIR/shops.json"
 check_success
 execute cp "$SOURCE_ENEMIES_FILE" "$DEST_ENEMIES_DIR/enemies.json"
 check_success
+execute cp "$SOURCE_BLOCKS_FILE" "$DEST_BLOCKS_DIR/blocks.txt"
+check_success
 
 # Commit changes in fork
 cd "$FORK_REPO"
@@ -180,6 +191,7 @@ execute git add "$DEST_DECKS_DIR"
 execute git add "$DEST_CONFIG_DIR/config.json"
 execute git add "$DEST_SHOPS_DIR/shops.json"
 execute git add "$DEST_ENEMIES_DIR/enemies.json"
+execute git add "$DEST_BLOCKS_DIR/blocks.txt"
 execute git commit -m "Apply Old School Shandalar patch updates"
 check_success
 execute git push origin master
