@@ -3,7 +3,7 @@
 # update_repos.sh - Script to update both fork and patch repositories
 
 # Configuration - Update these paths
-FORK_REPO="/Users/vanja/Creative Cloud Files Company Account a0651756@univie.ac.at 84723D5B5A2AE3390A495C11@AdobeID/Coding/decks/temp_forge/forge-full-oldschool"
+FORK_REPO="/Users/vanja/Creative Cloud Files Company Account a0651756@univie.ac.at 84723D5B5A2AE3390A495C11@AdobeID/Coding/decks/fresh_clone/forge-full-oldschool"
 PATCH_REPO="/Users/vanja/Creative Cloud Files Company Account a0651756@univie.ac.at 84723D5B5A2AE3390A495C11@AdobeID/Coding/decks"
 UPSTREAM_URL="https://github.com/Card-Forge/forge.git"
 
