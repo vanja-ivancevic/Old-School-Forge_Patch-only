@@ -8,7 +8,7 @@ This patch updates Forge's Shandalar campaign to only use old-border cards (from
 
 **Note:** This is a patch for the main Forge Shandalar adventure game, which can be found here: [https://github.com/Card-Forge/forge](https://github.com/Card-Forge/forge)
 
-All enemy decks have been reimagined for this old-school experience! The initial decklists were developed by a complex multi-AI-agent framework, and continue to be refined through playtesting.
+All enemy decks have been reimagined for this old-school experience! The initial decklists were developed by a complex multi-AI-agent framework, and continue to be refined through playtesting. At least 30-40 decks have been manually reviewed and improved - including all the boss decks.
 
 **Tested Version:** This patch has been tested and is intended for **forge-2.0.03**. Compatibility with other versions is not guaranteed.
 
