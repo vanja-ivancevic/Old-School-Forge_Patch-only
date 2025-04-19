@@ -71,6 +71,7 @@ If you prefer to install manually or encounter any issues with the scripts, foll
 - Enemy decks (All processed, playtest feedback welcome!)
 - Basic rewards
 - Shop inventories
+- Drafting (Jumpstarts still show up, but can't be played)
 
 🔄 In Progress: 
 - Special rewards
