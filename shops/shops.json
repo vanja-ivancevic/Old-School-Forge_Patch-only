@@ -9,11 +9,13 @@
     {
       "count":6,
 	  "cardText": "(destroy|exile) target|sacrifice",
-	  "colors": ["black"]
+	  "colors": ["black"],
+      "editions": ["LEA","LEB","2ED","3ED","ARN","ATQ","LEG","DRK","FEM","ICE","ALL","HML","MIR","VIS","WTH","TMP","STH","EXO","USG","ULG","UDS","MMQ","NMS","PCY","INV","PLS","APC","ODY","TOR","JUD","ONS","LGN","SCG","CHR","S99","PTK","POR","PO2"]
     },
 	{
       "count":2,
-	  "cardText": "(destroy|exile) target|sacrifice"
+	  "cardText": "(destroy|exile) target|sacrifice",
+      "editions": ["LEA","LEB","2ED","3ED","ARN","ATQ","LEG","DRK","FEM","ICE","ALL","HML","MIR","VIS","WTH","TMP","STH","EXO","USG","ULG","UDS","MMQ","NMS","PCY","INV","PLS","APC","ODY","TOR","JUD","ONS","LGN","SCG","CHR","S99","PTK","POR","PO2"]
     }]
 },
 
@@ -27,11 +29,13 @@
     {
       "count":6,
 	  "cardText": "destroyed|dies|return.*(hand|battlefield|library|to play)|put.*battlefield from",
-	  "colors": ["black"]
+	  "colors": ["black"],
+      "editions": ["LEA","LEB","2ED","3ED","ARN","ATQ","LEG","DRK","FEM","ICE","ALL","HML","MIR","VIS","WTH","TMP","STH","EXO","USG","ULG","UDS","MMQ","NMS","PCY","INV","PLS","APC","ODY","TOR","JUD","ONS","LGN","SCG","CHR","S99","PTK","POR","PO2"]
     },
 	{
       "count":2,
-	  "cardText": "destroyed|dies|return.*(hand|battlefield|library|to play)|put.*battlefield from"
+	  "cardText": "destroyed|dies|return.*(hand|battlefield|library|to play)|put.*battlefield from",
+      "editions": ["LEA","LEB","2ED","3ED","ARN","ATQ","LEG","DRK","FEM","ICE","ALL","HML","MIR","VIS","WTH","TMP","STH","EXO","USG","ULG","UDS","MMQ","NMS","PCY","INV","PLS","APC","ODY","TOR","JUD","ONS","LGN","SCG","CHR","S99","PTK","POR","PO2"]
     }]
 },
 {                                      
@@ -44,11 +48,13 @@
     {
       "count":6,
 	  "cardText": "pay.*life.*:|(lose|gain).*life|deal.*damage",
-	  "colors": ["black"]
+	  "colors": ["black"],
+      "editions": ["LEA","LEB","2ED","3ED","ARN","ATQ","LEG","DRK","FEM","ICE","ALL","HML","MIR","VIS","WTH","TMP","STH","EXO","USG","ULG","UDS","MMQ","NMS","PCY","INV","PLS","APC","ODY","TOR","JUD","ONS","LGN","SCG","CHR","S99","PTK","POR","PO2"]
     },
 	{
       "count":2,
-	  "cardText": "pay.*life.*:|(lose|gain).*life|deal.*damage"
+	  "cardText": "pay.*life.*:|(lose|gain).*life|deal.*damage",
+      "editions": ["LEA","LEB","2ED","3ED","ARN","ATQ","LEG","DRK","FEM","ICE","ALL","HML","MIR","VIS","WTH","TMP","STH","EXO","USG","ULG","UDS","MMQ","NMS","PCY","INV","PLS","APC","ODY","TOR","JUD","ONS","LGN","SCG","CHR","S99","PTK","POR","PO2"]
     }]
 },{                                      
 "name":"Black4",                  
@@ -60,11 +66,13 @@
     {
       "count":6,
 	  "cardText": "search|seek|reveal.*library|choose|choice|unless",
-	  "colors": ["black"]
+	  "colors": ["black"],
+      "editions": ["LEA","LEB","2ED","3ED","ARN","ATQ","LEG","DRK","FEM","ICE","ALL","HML","MIR","VIS","WTH","TMP","STH","EXO","USG","ULG","UDS","MMQ","NMS","PCY","INV","PLS","APC","ODY","TOR","JUD","ONS","LGN","SCG","CHR","S99","PTK","POR","PO2"]
     },
 	{
       "count":2,
-	  "cardText": "search|seek|reveal.*library|choose|choice|unless"
+	  "cardText": "search|seek|reveal.*library|choose|choice|unless",
+      "editions": ["LEA","LEB","2ED","3ED","ARN","ATQ","LEG","DRK","FEM","ICE","ALL","HML","MIR","VIS","WTH","TMP","STH","EXO","USG","ULG","UDS","MMQ","NMS","PCY","INV","PLS","APC","ODY","TOR","JUD","ONS","LGN","SCG","CHR","S99","PTK","POR","PO2"]
     }]
 },{                                      
 "name":"Black5",                  
@@ -76,11 +84,13 @@
     {
       "count":6,
 	  "cardText": "deathtouch|fear|intimidate|menace|ninjutsu|regenerate\b",
-	  "colors": ["black"]
+	  "colors": ["black"],
+      "editions": ["LEA","LEB","2ED","3ED","ARN","ATQ","LEG","DRK","FEM","ICE","ALL","HML","MIR","VIS","WTH","TMP","STH","EXO","USG","ULG","UDS","MMQ","NMS","PCY","INV","PLS","APC","ODY","TOR","JUD","ONS","LGN","SCG","CHR","S99","PTK","POR","PO2"]
     },
 	{
       "count":2,
-	  "cardText": "deathtouch|fear|intimidate|menace|ninjutsu|regenerate\b"
+	  "cardText": "deathtouch|fear|intimidate|menace|ninjutsu|regenerate\b",
+      "editions": ["LEA","LEB","2ED","3ED","ARN","ATQ","LEG","DRK","FEM","ICE","ALL","HML","MIR","VIS","WTH","TMP","STH","EXO","USG","ULG","UDS","MMQ","NMS","PCY","INV","PLS","APC","ODY","TOR","JUD","ONS","LGN","SCG","CHR","S99","PTK","POR","PO2"]
     }]
 },{                                      
 "name":"Black6",                  
@@ -92,11 +102,13 @@
     {
       "count":6,
 	  "cardText": "([+-])\\d?/([+-])\\d?",
-	  "colors": ["black"]
+	  "colors": ["black"],
+      "editions": ["LEA","LEB","2ED","3ED","ARN","ATQ","LEG","DRK","FEM","ICE","ALL","HML","MIR","VIS","WTH","TMP","STH","EXO","USG","ULG","UDS","MMQ","NMS","PCY","INV","PLS","APC","ODY","TOR","JUD","ONS","LGN","SCG","CHR","S99","PTK","POR","PO2"]
     },
 	{
       "count":2,
-	  "cardText": "([+-])\\d?/([+-])\\d?"
+	  "cardText": "([+-])\\d?/([+-])\\d?",
+      "editions": ["LEA","LEB","2ED","3ED","ARN","ATQ","LEG","DRK","FEM","ICE","ALL","HML","MIR","VIS","WTH","TMP","STH","EXO","USG","ULG","UDS","MMQ","NMS","PCY","INV","PLS","APC","ODY","TOR","JUD","ONS","LGN","SCG","CHR","S99","PTK","POR","PO2"]
     }]
 },{                                      
 "name":"Blue1",                  
@@ -108,11 +120,13 @@
     {
       "count":6,
 	  "cardText": "return.*to.*(hand|top of.*library)|gain(s)? control of|mill|tap |untap|counter target",
-	  "colors": ["blue"]
+	  "colors": ["blue"],
+      "editions": ["LEA","LEB","2ED","3ED","ARN","ATQ","LEG","DRK","FEM","ICE","ALL","HML","MIR","VIS","WTH","TMP","STH","EXO","USG","ULG","UDS","MMQ","NMS","PCY","INV","PLS","APC","ODY","TOR","JUD","ONS","LGN","SCG","CHR","S99","PTK","POR","PO2"]
     },
 	{
       "count":2,
-	  "cardText": "return.*to.*(hand|top of.*library)|gain(s)? control of|mill|tap |untap|counter target"
+	  "cardText": "return.*to.*(hand|top of.*library)|gain(s)? control of|mill|tap |untap|counter target",
+      "editions": ["LEA","LEB","2ED","3ED","ARN","ATQ","LEG","DRK","FEM","ICE","ALL","HML","MIR","VIS","WTH","TMP","STH","EXO","USG","ULG","UDS","MMQ","NMS","PCY","INV","PLS","APC","ODY","TOR","JUD","ONS","LGN","SCG","CHR","S99","PTK","POR","PO2"]
     }]
 },{                                      
 "name":"Blue2",                  
@@ -124,11 +138,13 @@
     {
       "count":6,
 	  "cardText": "artifact|historic|explores|connive|clue token|investigate",
-	  "colors": ["blue"]
+	  "colors": ["blue"],
+      "editions": ["LEA","LEB","2ED","3ED","ARN","ATQ","LEG","DRK","FEM","ICE","ALL","HML","MIR","VIS","WTH","TMP","STH","EXO","USG","ULG","UDS","MMQ","NMS","PCY","INV","PLS","APC","ODY","TOR","JUD","ONS","LGN","SCG","CHR","S99","PTK","POR","PO2"]
     },
 	{
       "count":2,
-	  "cardText": "artifact|historic|explores|connive|clue token|investigate"
+	  "cardText": "artifact|historic|explores|connive|clue token|investigate",
+      "editions": ["LEA","LEB","2ED","3ED","ARN","ATQ","LEG","DRK","FEM","ICE","ALL","HML","MIR","VIS","WTH","TMP","STH","EXO","USG","ULG","UDS","MMQ","NMS","PCY","INV","PLS","APC","ODY","TOR","JUD","ONS","LGN","SCG","CHR","S99","PTK","POR","PO2"]
     }]
 },{                                      
 "name":"Blue3",                  
@@ -140,7 +156,8 @@
     {
       "count":6,
 	  "cardText": "flying|prowess|unblockable|hexproof|shroud|morph|ninjutsu|phas(ing|(es (in|out)))",
-	  "colors": ["blue"]
+	  "colors": ["blue"],
+      "editions": ["LEA","LEB","2ED","3ED","ARN","ATQ","LEG","DRK","FEM","ICE","ALL","HML","MIR","VIS","WTH","TMP","STH","EXO","USG","ULG","UDS","MMQ","NMS","PCY","INV","PLS","APC","ODY","TOR","JUD","ONS","LGN","SCG","CHR","S99","PTK","POR","PO2"]
     },
 	{
       "count":2,
@@ -156,7 +173,8 @@
     {
       "count":6,
 	  "cardText": "(change|copy).*(that|target)|color(s|ed)?\\b|land type|mana|name|flashback|overload|splice|rebound|buyback|morph|madness|delve|instead",
-	  "colors": ["blue"]
+	  "colors": ["blue"],
+      "editions": ["LEA","LEB","2ED","3ED","ARN","ATQ","LEG","DRK","FEM","ICE","ALL","HML","MIR","VIS","WTH","TMP","STH","EXO","USG","ULG","UDS","MMQ","NMS","PCY","INV","PLS","APC","ODY","TOR","JUD","ONS","LGN","SCG","CHR","S99","PTK","POR","PO2"]
     },
 	{
       "count":2,
@@ -172,7 +190,8 @@
     {
       "count":6,
 	  "cardText": "draw(s)?|(exile|reveal|look|search).*library|scry|seek|conjure ",
-	  "colors": ["blue"]
+	  "colors": ["blue"],
+      "editions": ["LEA","LEB","2ED","3ED","ARN","ATQ","LEG","DRK","FEM","ICE","ALL","HML","MIR","VIS","WTH","TMP","STH","EXO","USG","ULG","UDS","MMQ","NMS","PCY","INV","PLS","APC","ODY","TOR","JUD","ONS","LGN","SCG","CHR","S99","PTK","POR","PO2"]
     },
 	{
       "count":2,
@@ -189,7 +208,8 @@
     {
       "count":6,
 	  "cardText": "can't|must|whenever|unless|becomes|until|upkeep|(leave|enter)(s)|doesn't? .*(play|battlefield)|each",
-	  "colors": ["blue"]
+	  "colors": ["blue"],
+      "editions": ["LEA","LEB","2ED","3ED","ARN","ATQ","LEG","DRK","FEM","ICE","ALL","HML","MIR","VIS","WTH","TMP","STH","EXO","USG","ULG","UDS","MMQ","NMS","PCY","INV","PLS","APC","ODY","TOR","JUD","ONS","LGN","SCG","CHR","S99","PTK","POR","PO2"]
     },
 	{
       "count":2,
@@ -5499,7 +5519,7 @@
 		{
 			"count":1,
 			"subTypes": ["Goblin"],
-			"minDate": "2021-09-09"
+			"minDate": "1992-09-09"
 		}]
 	}]
 },
@@ -5511,7 +5531,8 @@
     "rewards": [
       {
         "type": "cardPackShop",
-        "count": 8
+        "count": 8,
+        "editions": ["LEA", "LEB", "2ED", "3ED", "ARN", "ATQ", "LEG"]
       }]
   },
   {
@@ -5523,14 +5544,9 @@
     "rewards": [
       {
         "type": "cardPackShop",
-        "count": 4,
-        "colors":["White"]
-      },
-      {
-        "type": "cardPackShop",
-        "count": 4
+        "count": 8,
+        "editions": ["LEA", "LEB", "2ED", "3ED", "ARN", "ATQ", "LEG", "DRK", "FEM", "ICE", "ALL", "HML", "MIR", "VIS", "WTH", "TMP", "STH", "EXO", "USG", "ULG", "UDS", "MMQ", "NMS", "PCY", "INV", "PLS", "APC", "ODY", "TOR", "JUD", "ONS", "LGN", "SCG", "CHR", "S99", "PTK", "POR", "PO2"]
       }]
-
   },
   {
     "name": "BlueBoosterPackShop",
@@ -5540,13 +5556,9 @@
     "sprite": "BoosterShop",
     "rewards": [
       {
-            "type": "cardPackShop",
-            "count": 4,
-            "colors":["Blue"]
-          },
-          {
-            "type": "cardPackShop",
-            "count": 4
+        "type": "cardPackShop",
+        "count": 8,
+        "editions": ["LEA", "LEB", "2ED", "3ED", "ARN", "ATQ", "LEG", "DRK", "FEM", "ICE", "ALL", "HML", "MIR", "VIS", "WTH", "TMP", "STH", "EXO", "USG", "ULG", "UDS", "MMQ", "NMS", "PCY", "INV", "PLS", "APC", "ODY", "TOR", "JUD", "ONS", "LGN", "SCG", "CHR", "S99", "PTK", "POR", "PO2"]
       }]
   },
   {
@@ -5558,12 +5570,8 @@
     "rewards": [
       {
         "type": "cardPackShop",
-        "count": 4,
-        "colors":["Black"]
-      },
-      {
-        "type": "cardPackShop",
-        "count": 4
+        "count": 8,
+        "editions": ["LEA", "LEB", "2ED", "3ED", "ARN", "ATQ", "LEG", "DRK", "FEM", "ICE", "ALL", "HML", "MIR", "VIS", "WTH", "TMP", "STH", "EXO", "USG", "ULG", "UDS", "MMQ", "NMS", "PCY", "INV", "PLS", "APC", "ODY", "TOR", "JUD", "ONS", "LGN", "SCG", "CHR", "S99", "PTK", "POR", "PO2"]
       }]
   },
   {
@@ -5575,17 +5583,13 @@
     "rewards": [
       {
         "type": "cardPackShop",
-        "count": 4,
-        "colors":["Red"]
-      },
-      {
-        "type": "cardPackShop",
-        "count": 4
+        "count": 8,
+        "editions": ["LEA", "LEB", "2ED", "3ED", "ARN", "ATQ", "LEG", "DRK", "FEM", "ICE", "ALL", "HML", "MIR", "VIS", "WTH", "TMP", "STH", "EXO", "USG", "ULG", "UDS", "MMQ", "NMS", "PCY", "INV", "PLS", "APC", "ODY", "TOR", "JUD", "ONS", "LGN", "SCG", "CHR", "S99", "PTK", "POR", "PO2"]
       }]
   },
   {
     "name": "GreenBoosterPackShop",
-    "description":"Nature’s Nurture Packs",
+    "description":"Nature's Nurture Packs",
     "spriteAtlas":"maps/tileset/buildings.atlas",
     "overlaySprite": "Overlay4Green",
     "sprite": "BoosterShop",
@@ -5593,11 +5597,7 @@
       {
         "type": "cardPackShop",
         "count": 4,
-        "colors":["Green"]
-      },
-      {
-        "type": "cardPackShop",
-        "count": 4
+        "editions": ["LEA", "LEB", "2ED", "3ED", "ARN", "ATQ", "LEG", "DRK", "FEM", "ICE", "ALL", "HML", "MIR", "VIS", "WTH", "TMP", "STH", "EXO", "USG", "ULG", "UDS", "MMQ", "NMS", "PCY", "INV", "PLS", "APC", "ODY", "TOR", "JUD", "ONS", "LGN", "SCG", "CHR", "S99", "PTK", "POR", "PO2"]
       }]
   },
   {
@@ -5609,12 +5609,8 @@
     "rewards": [
       {
         "type": "cardPackShop",
-        "count": 4,
-        "colors":["Colorless"]
-      },
-      {
-        "type": "cardPackShop",
-        "count": 4
+        "count": 8,
+        "editions": ["LEA", "LEB", "2ED", "3ED", "ARN", "ATQ", "LEG", "DRK", "FEM", "ICE", "ALL", "HML", "MIR", "VIS", "WTH", "TMP", "STH", "EXO", "USG", "ULG", "UDS", "MMQ", "NMS", "PCY", "INV", "PLS", "APC", "ODY", "TOR", "JUD", "ONS", "LGN", "SCG", "CHR", "S99", "PTK", "POR", "PO2"]
       }]
   },
   {
@@ -5626,8 +5622,8 @@
       {
         "type": "cardPackShop",
         "count": 8,
-        "startDate": 1994,
-        "endDate": 1995
+        "startDate": 1980,
+        "endDate": 1994
       }]
   },
   {
@@ -5639,8 +5635,8 @@
       {
         "type": "cardPackShop",
         "count": 8,
-        "startDate": 1995,
-        "endDate": 1997
+        "startDate": 1993,
+        "endDate": 1996
       }]
   },
   {
@@ -5652,7 +5648,7 @@
       {
         "type": "cardPackShop",
         "count": 8,
-        "startDate": 1997,
+        "startDate": 1995,
         "endDate": 1999
       }]
   },
@@ -5665,7 +5661,7 @@
       {
         "type": "cardPackShop",
         "count": 8,
-        "startDate": 2000,
+        "startDate": 1999,
         "endDate": 2003
       }]
   }
